@@ -85,14 +85,10 @@ function process_admin_inscription() {
         $role = 'utilisateur';
     }
 
-    // Si un admin est connecté, il doit avoir le rôle admin pour ajouter des comptes
-    $admin_connecte = isset($_SESSION['admin_id']) && isset($_SESSION['admin_role']);
-    if ($admin_connecte && ($_SESSION['admin_role'] ?? '') !== 'admin') {
-        $errors[] = 'Vous n\'avez pas les droits pour ajouter des comptes.';
-    }
-
     // Si aucune erreur, procéder à l'inscription
     if (empty($errors)) {
+        $admin_connecte = isset($_SESSION['admin_id']) && isset($_SESSION['admin_email']);
+
         // Hashage du mot de passe
         $password_hash = password_hash($password, PASSWORD_BCRYPT);
 

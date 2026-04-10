@@ -3,15 +3,11 @@ session_start();
 
 require_once __DIR__ . '/../models/model_admin.php';
 
-// Si des admins existent : seul un admin connecté avec rôle admin peut ajouter des comptes
-if (admin_exists()) {
-    if (!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_email'])) {
-        header('Location: login.php');
-        exit;
-    }
-    if (($_SESSION['admin_role'] ?? '') !== 'admin') {
-        header('Location: dashboard.php');
-        exit;
+// Synchroniser le rôle depuis la BDD si une session admin existe (affichage / formulaire)
+if (isset($_SESSION['admin_id']) && (int) $_SESSION['admin_id'] > 0) {
+    $admin_session = get_admin_by_id((int) $_SESSION['admin_id']);
+    if ($admin_session) {
+        $_SESSION['admin_role'] = $admin_session['role'] ?? 'admin';
     }
 }
 

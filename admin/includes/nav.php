@@ -114,7 +114,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <?php endif; ?>
             <?php if ($can_manage_comptes): ?>
                 <a href="<?php echo $base_path; ?>comptes/index.php"
-                    class="menu-item <?php echo $is_comptes ? 'active' : ''; ?>">
+                    class="menu-item <?php echo ($is_comptes || $current_page === 'inscription-admin.php') ? 'active' : ''; ?>">
                     <i class="fas fa-user-shield"></i>
                     <span>Comptes</span>
                 </a>

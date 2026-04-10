@@ -343,4 +343,32 @@ function update_admin_statut($id, $statut)
     }
 }
 
+/**
+ * Cible de redirection après login admin (liste blanche, pas d’URL absolue / open redirect).
+ *
+ * @param string|null $next
+ * @return string Chemin relatif sous admin/
+ */
+function admin_post_login_redirect_url($next)
+{
+    $default = 'dashboard.php';
+    if ($next === null || $next === '') {
+        return $default;
+    }
+    $next = trim((string) $next);
+    if ($next === '' || strpos($next, '..') !== false) {
+        return $default;
+    }
+    $first = $next[0] ?? '';
+    if ($first === '/' || $first === '\\') {
+        return $default;
+    }
+    $whitelist = ['inscription-admin.php', 'comptes/index.php'];
+    if (in_array($next, $whitelist, true)) {
+        return $next;
+    }
+
+    return $default;
+}
+
 ?>

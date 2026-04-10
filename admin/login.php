@@ -19,6 +19,21 @@ if (!admin_exists()) {
     exit;
 }
 
+// Cible après connexion (ex. retour vers inscription-admin) — conservée en champ caché après POST
+$next_after_login = '';
+if (isset($_GET['next'])) {
+    $next_after_login = trim((string) $_GET['next']);
+} elseif (isset($_POST['next'])) {
+    $next_after_login = trim((string) $_POST['next']);
+}
+$next_valid = '';
+if ($next_after_login !== '') {
+    $resolved = admin_post_login_redirect_url($next_after_login);
+    if ($resolved !== 'dashboard.php') {
+        $next_valid = $resolved;
+    }
+}
+
 // Traiter le formulaire de connexion
 require_once __DIR__ . '/../controllers/controller_admin.php';
 $result = process_admin_login();
@@ -32,7 +47,8 @@ if (isset($result['success']) && $result['success'] && $result['admin']) {
     $_SESSION['admin_statut'] = $result['admin']['statut'];
     $_SESSION['admin_role'] = $result['admin']['role'] ?? 'admin';
 
-    header('Location: dashboard.php');
+    $goto = admin_post_login_redirect_url($next_after_login);
+    header('Location: ' . $goto);
     exit;
 }
 
@@ -376,6 +392,9 @@ if (isset($_SESSION['inscription_success'])) {
             <?php endif; ?>
 
             <form method="POST" action="" id="loginForm">
+                <?php if ($next_valid !== ''): ?>
+                <input type="hidden" name="next" value="<?php echo htmlspecialchars($next_valid); ?>">
+                <?php endif; ?>
                 <div class="form-group">
                     <label for="email"><i class="fas fa-envelope"></i> Email *</label>
                     <div class="input-wrapper">
@@ -403,9 +422,11 @@ if (isset($_SESSION['inscription_success'])) {
                 </button>
             </form>
 
-            <!-- <div class="footer-text">
-                <p>Vous n'avez pas de compte ? <a href="inscription-admin.php">Créer un compte</a></p>
-            </div> -->
+            <?php if (admin_exists()): ?>
+            <div class="footer-text">
+                <p style="font-size: 13px; line-height: 1.5;">Créer un autre compte staff : <a href="inscription-admin.php">Formulaire d’inscription</a> (également via <strong>Comptes</strong> une fois connecté).</p>
+            </div>
+            <?php endif; ?>
         </div>
     </div>
 
