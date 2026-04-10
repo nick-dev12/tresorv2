@@ -1,0 +1,45 @@
+/**
+ * Palette officielle — Produits naturels
+ * Principale : #c26638 (terre) | Secondaire : #918a44 (doré) | #000000 | #6b2f20 | #ffffff
+ */
+
+:root {
+  /* Couleurs de base */
+  --dore-secondaire: #918a44;
+  --terre-principale: #c26638;
+  --noir: #000000;
+  --marron-accent: #6b2f20;
+  --blanc: #ffffff;
+
+  /* Alias historiques (compatibilité avec le code existant) */
+  --rose: #c26638;
+  --jaune-wilton: #918a44;
+  --beige-creme: #ffffff;
+  --turquoise: #918a44;
+  --orange: #c26638;
+
+  /* Texte */
+  --texte-fonce: #000000;
+  --texte-clair: #ffffff;
+
+  /* Rôles UI — dominante = terre #c26638 */
+  --fond-principal: #ffffff;
+  --couleur-dominante: #c26638;
+  --boutons-secondaires: #918a44;
+  --accent-promo: #c26638;
+  --titres: #000000;
+
+  /* Surfaces */
+  --glass-bg: #ffffff;
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+
+  /* Ombres (teinte principale terre) */
+  --ombre-douce: 0 4px 20px rgba(194, 102, 56, 0.08);
+  --ombre-promo: 0 4px 15px rgba(194, 102, 56, 0.25);
+  --ombre-gourmande: 0 8px 30px rgba(194, 102, 56, 0.15);
+
+  /* Typographie */
+  --font-titres: 'Playfair Display', serif;
+  --font-corps: 'Quicksand', 'Nunito', sans-serif;
+}

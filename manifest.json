@@ -1,0 +1,20 @@
+{
+  "name": "Trésor Africain - Produits naturels",
+  "short_name": "Trésor Africain",
+  "description": "Boutique en ligne de produits naturels - Noix, Feuilles, Fruits, Huiles, Céréales, Racines",
+  "start_url": "/index.php",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#c26638",
+  "background_color": "#ffffff",
+  "lang": "fr",
+  "icons": [
+    {"src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ],
+  "screenshots": [
+    {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "form_factor": "wide", "label": "Logo Sugar Paper - Personnaliser vos gâteaux"},
+    {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "form_factor": "narrow", "label": "Logo Sugar Paper - Personnaliser vos gâteaux"}
+  ]
+}
