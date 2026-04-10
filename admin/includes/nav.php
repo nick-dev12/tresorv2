@@ -66,7 +66,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <aside class="admin-sidebar" id="adminSidebar">
         <div class="sidebar-header">
             <i class="fas fa-store logo-icon"></i>
-            <h2>Sugar Paper</h2>
+            <h2>Trésor Africain</h2>
         </div>
         <nav class="sidebar-menu">
             <a href="<?php echo $base_path; ?>dashboard.php"

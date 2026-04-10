@@ -58,7 +58,7 @@ if (!empty($produits)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de Bord - Administration Sugar Paper</title>
+    <title>Tableau de Bord - Administration Trésor Africain</title>
     <?php require_once __DIR__ . '/../includes/asset_version.php'; ?>
     <?php include __DIR__ . '/../includes/pwa_meta.php'; ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -340,7 +340,7 @@ if (!empty($produits)) {
                 </header>
                 <div class="dashboard-hero-toolbar" role="toolbar" aria-label="Actions rapides">
                     <button type="button" id="btn-install-pwa" class="dashboard-btn dashboard-btn--ghost"
-                        title="Installer l'application Sugar Paper sur cet appareil" style="display: none;">
+                        title="Installer l'application Trésor Africain sur cet appareil" style="display: none;">
                         <i class="fas fa-download" aria-hidden="true"></i> Installer l’app
                     </button>
                     <button type="button" id="btn-enable-notifications" class="dashboard-btn dashboard-btn--ghost"

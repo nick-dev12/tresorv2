@@ -36,7 +36,7 @@ $is_ajout_par_admin = admin_exists() && isset($_SESSION['admin_id']);
     <?php include __DIR__ . '/../includes/favicon.php'; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription Administrateur - Sugar Paper</title>
+    <title>Inscription Administrateur - Trésor Africain</title>
     <?php require_once __DIR__ . '/../includes/asset_version.php'; ?>
     <link rel="stylesheet" href="/css/variables.css<?php echo asset_version_query(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -390,7 +390,7 @@ $is_ajout_par_admin = admin_exists() && isset($_SESSION['admin_id']);
 <body>
     <header class="auth-header">
         <a class="logo" href="/index.php">
-            <img src="/image/sugar_paper.jpg" alt="Sugar Paper">
+            <img src="/image/logo.jpeg" alt="Trésor Africain">
         </a>
     </header>
 
