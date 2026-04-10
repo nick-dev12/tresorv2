@@ -14,6 +14,9 @@ config/site.php
 config/firebase_config.php
 config/firebase_server.php
 
+# Admin : page de diagnostic Firebase (ne pas versionner)
+admin/firebase-config-check.php
+
 # Variables d'environnement
 .env
 .env.*
